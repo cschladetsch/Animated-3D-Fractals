@@ -1,3 +1,4 @@
+#include "gl_workaround.h"
 #include "shader.h"
 
 #define GL_DECLARE_ONLY

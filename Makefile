@@ -3,8 +3,8 @@
 all: boxplorer2 shadershrink edit-cfg glsl sdl2-test
 
 
-CFLAGS  = -std=c++11 -g -O2 -D_REENTRANT -I/usr/local/include/SDL2  -DHAVE_OPENGL -g -IAntTweakBar/include -Iinclude
-LIBS    =  -lSDL2_test -L/usr/local/lib -Wl,-rpath,/usr/local/lib -lSDL2
+CFLAGS  = -std=c++11 -g -O2 -D_REENTRANT -I/usr/local/include/SDL2 -I/home/christian/Dev/boxplorer2/AntTweakBar/include -I/home/christian/Dev/boxplorer2/include -DHAVE_OPENGL -DTW_NO_LIB_PRAGMA -DTW_STATIC -D_UNIX 
+LIBS    =  -lSDL2_test -L/usr/local/lib -Wl,-rpath,/usr/local/lib -lSDL2 -lm -lGL -lX11 -lSDL2main
 
 
 #CFLAGS=-O2 -IGL -I/usr/include/SDL2 -IAntTweakBar/include -IAntTweakBar/src -Iinclude -DGL_GLEXT_LEGACY -DTW_NO_LIB_PRAGMA -DTW_STATIC -Wall -D_UNIX -std=c++0x -DGL_VERSION_1_5

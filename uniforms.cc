@@ -1,3 +1,5 @@
+#include "gl_workaround.h"
+
 #include "uniforms.h"
 
 #include <iostream>
@@ -9,6 +11,7 @@
 
 #define GL_DECLARE_ONLY
 #include "shader_procs.h"
+
 
 using namespace std;
 
