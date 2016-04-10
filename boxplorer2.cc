@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -7,10 +8,15 @@
 #include <assert.h>
 #include <sys/stat.h>
 
+
 #if !defined(_WIN32)
 
 #include <float.h>
 #include <unistd.h>
+#include <cstddef>
+
+typedef ptrdiff_t GLintptr;
+typedef ptrdiff_t GLsizeiptr;
 
 #define _strdup strdup
 #define __FUNCTION__ "boxplorer2"
@@ -63,7 +69,7 @@ using namespace std;
 #include <SDL_thread.h>
 #include <SDL_main.h>
 
-#include <AntTweakBar.h>
+#include "AntTweakBar.h"
 
 #include "shader_procs.h"
 #include "default_shaders.h"

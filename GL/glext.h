@@ -5,6 +5,8 @@
 extern "C" {
 #endif
 
+#define GLX_GLEXT_LEGACY
+
 /*
 ** Copyright (c) 2007-2011 The Khronos Group Inc.
 ** 
