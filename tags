@@ -1,0 +1,425 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ARRAYSIZE	boxplorer2.cc	98;"	d	file:
+BaseDir	boxplorer2.cc	/^string BaseDir;     \/\/ Where our executable and include dirs live.$/;"	v
+BaseFile	boxplorer2.cc	/^string BaseFile;    \/\/ Initial argument filename.$/;"	v
+BoolUniform	uniforms.cc	/^   BoolUniform() : adr_(NULL) {}$/;"	f	class:BoolUniform
+BoolUniform	uniforms.cc	/^  BoolUniform(const BoolUniform& other) :$/;"	f	class:BoolUniform	file:
+BoolUniform	uniforms.cc	/^class BoolUniform : public iUniform {$/;"	c	file:
+CHECK_ERROR	boxplorer2.cc	107;"	d	file:
+CHECK_FRAMEBUFFER	boxplorer2.cc	110;"	d	file:
+CHECK_STATUS	boxplorer2.cc	101;"	d	file:
+COLORING_initializer	glsl.cc	/^  COLORING_initializer(string name, GLSL::vec3 (*func)(GLSL::vec3)) {$/;"	f	class:COLORING_initializer
+COLORING_initializer	glsl.cc	/^class COLORING_initializer {$/;"	c	file:
+COLOR_funcs	boxplorer2.cc	/^map<string, GLSL::vec3 (*)(GLSL::vec3)> COLOR_funcs;$/;"	v
+COLOR_funcs	glsl.cc	/^map<string, GLSL::vec3 (*)(GLSL::vec3)> COLOR_funcs;$/;"	v
+CTL_3D	boxplorer2.cc	/^	CTL_TIME, CTL_CAM, CTL_3D,$/;"	e	enum:Controller	file:
+CTL_AO	boxplorer2.cc	/^	CTL_FOV = ARRAYSIZE(camera.par), CTL_RAY, CTL_ITER, CTL_AO, CTL_GLOW,$/;"	e	enum:Controller	file:
+CTL_CAM	boxplorer2.cc	/^	CTL_TIME, CTL_CAM, CTL_3D,$/;"	e	enum:Controller	file:
+CTL_FOV	boxplorer2.cc	/^	CTL_FOV = ARRAYSIZE(camera.par), CTL_RAY, CTL_ITER, CTL_AO, CTL_GLOW,$/;"	e	enum:Controller	file:
+CTL_GLOW	boxplorer2.cc	/^	CTL_FOV = ARRAYSIZE(camera.par), CTL_RAY, CTL_ITER, CTL_AO, CTL_GLOW,$/;"	e	enum:Controller	file:
+CTL_ITER	boxplorer2.cc	/^	CTL_FOV = ARRAYSIZE(camera.par), CTL_RAY, CTL_ITER, CTL_AO, CTL_GLOW,$/;"	e	enum:Controller	file:
+CTL_LAST	boxplorer2.cc	/^	CTL_LAST = CTL_3D,$/;"	e	enum:Controller	file:
+CTL_RAY	boxplorer2.cc	/^	CTL_FOV = ARRAYSIZE(camera.par), CTL_RAY, CTL_ITER, CTL_AO, CTL_GLOW,$/;"	e	enum:Controller	file:
+CTL_TIME	boxplorer2.cc	/^	CTL_TIME, CTL_CAM, CTL_3D,$/;"	e	enum:Controller	file:
+Camera	boxplorer2.cc	/^class Camera : public KeyFrame$/;"	c	file:
+CatmullRom	boxplorer2.cc	/^void CatmullRom(const vector<KeyFrame>& keyframes,$/;"	f
+Clone	uniforms.cc	/^   iUniform* Clone() { return new BoolUniform(*this); }$/;"	f	class:BoolUniform
+Clone	uniforms.cc	/^   iUniform* Clone() { return new DoubleUniform(*this); }$/;"	f	class:DoubleUniform
+Clone	uniforms.cc	/^   iUniform* Clone() { return new FloatUniform(*this); }$/;"	f	class:FloatUniform
+Clone	uniforms.cc	/^   iUniform* Clone() { return new IntUniform(*this); }$/;"	f	class:IntUniform
+Clone	uniforms.cc	/^   iUniform* Clone() { return new Vec3Uniform(*this); }$/;"	f	class:Vec3Uniform
+Controller	boxplorer2.cc	/^typedef enum Controller$/;"	g	file:
+Controller	boxplorer2.cc	/^} Controller;$/;"	t	typeref:enum:Controller	file:
+DE64_funcs	boxplorer2.cc	/^map<string, double (*)(GLSL::dvec3)> DE64_funcs;$/;"	v
+DE64_funcs	glsl.cc	/^map<string, double (*)(GLSL::dvec3)> DE64_funcs;$/;"	v
+DECLARE_COLORING	boxplorer2.cc	151;"	d	file:
+DECLARE_COLORING	glsl.cc	52;"	d	file:
+DECLARE_DE	boxplorer2.cc	150;"	d	file:
+DECLARE_DE	glsl.cc	45;"	d	file:
+DEFAULT_CONFIG	boxplorer2.cc	85;"	d	file:
+DEFAULT_CONFIG_FILE	boxplorer2.cc	84;"	d	file:
+DE_initializer	boxplorer2.cc	/^	DE_initializer(string name, double (*func)(GLSL::dvec3))$/;"	f	class:DE_initializer
+DE_initializer	boxplorer2.cc	/^	DE_initializer(string name, float (*func)(GLSL::vec3))$/;"	f	class:DE_initializer
+DE_initializer	boxplorer2.cc	/^class DE_initializer$/;"	c	file:
+DE_initializer	glsl.cc	/^  DE_initializer(string name, double (*func)(GLSL::dvec3)) {$/;"	f	class:DE_initializer
+DE_initializer	glsl.cc	/^  DE_initializer(string name, float (*func)(GLSL::vec3)) {$/;"	f	class:DE_initializer
+DE_initializer	glsl.cc	/^class DE_initializer {$/;"	c	file:
+DOF_FRAGMENT_SHADER_FILE	boxplorer2.cc	91;"	d	file:
+DOF_VERTEX_SHADER_FILE	boxplorer2.cc	90;"	d	file:
+DoubleUniform	uniforms.cc	/^    DoubleUniform(const DoubleUniform& other) :$/;"	f	class:DoubleUniform	file:
+DoubleUniform	uniforms.cc	/^   DoubleUniform() : adr_(NULL) {}$/;"	f	class:DoubleUniform
+DoubleUniform	uniforms.cc	/^class DoubleUniform : public iUniform {$/;"	c	file:
+EFFECTS_FRAGMENT_SHADER_FILE	boxplorer2.cc	89;"	d	file:
+EFFECTS_VERTEX_SHADER_FILE	boxplorer2.cc	88;"	d	file:
+FPS_FRAMES_TO_AVERAGE	boxplorer2.cc	186;"	d	file:
+FRAGMENT_SHADER_FILE	boxplorer2.cc	87;"	d	file:
+FXAA_FRAGMENT_SHADER_FILE	boxplorer2.cc	93;"	d	file:
+FXAA_VERTEX_SHADER_FILE	boxplorer2.cc	92;"	d	file:
+FloatUniform	uniforms.cc	/^    FloatUniform(const FloatUniform& other) :$/;"	f	class:FloatUniform	file:
+FloatUniform	uniforms.cc	/^   FloatUniform() : adr_(NULL) {}$/;"	f	class:FloatUniform
+FloatUniform	uniforms.cc	/^class FloatUniform : public iUniform {$/;"	c	file:
+GFX	boxplorer2.cc	/^	GFX() : display_(-1),$/;"	f	class:GFX
+GFX	boxplorer2.cc	/^class GFX$/;"	c	file:
+GFX	sdl2-test.cc	/^  GFX() : display_(-1),$/;"	f	class:GFX
+GFX	sdl2-test.cc	/^class GFX {$/;"	c	file:
+GLSL	boxplorer2.cc	/^namespace GLSL$/;"	n	file:
+GLSL	glsl.cc	/^namespace GLSL {$/;"	n	file:
+GL_DECLARE_ONLY	shader.cc	4;"	d	file:
+GL_DECLARE_ONLY	uniforms.cc	12;"	d	file:
+GLintptr	boxplorer2.cc	/^typedef ptrdiff_t GLintptr;$/;"	t	file:
+GLsizeiptr	boxplorer2.cc	/^typedef ptrdiff_t GLsizeiptr;$/;"	t	file:
+GetOculusDeviceInfo	oculus_sdk2.cc	/^int GetOculusDeviceInfo(hmd_settings_t *hmd_settings)$/;"	f
+GetOculusDeviceInfo	oculus_sdk4.cc	/^int GetOculusDeviceInfo(hmd_settings_t *hmd_settings) {$/;"	f
+GetOculusQuat	oculus_sdk2.cc	/^void GetOculusQuat(float quat[4]) {$/;"	f
+GetOculusQuat	oculus_sdk4.cc	/^bool GetOculusQuat(float quat[4]) {$/;"	f
+GetOculusView	oculus_sdk2.cc	/^bool GetOculusView(float view[3])$/;"	f
+GetOculusView	oculus_sdk4.cc	/^void GetOculusView(float view[3]) {$/;"	f
+InitOculusSDK	oculus_sdk2.cc	/^int InitOculusSDK()$/;"	f
+InitOculusSDK	oculus_sdk4.cc	/^int InitOculusSDK() {$/;"	f
+IntUniform	uniforms.cc	/^   IntUniform() : adr_(NULL) {}$/;"	f	class:IntUniform
+IntUniform	uniforms.cc	/^  IntUniform(const IntUniform& other) :$/;"	f	class:IntUniform	file:
+IntUniform	uniforms.cc	/^class IntUniform : public iUniform {$/;"	c	file:
+KeyFrame	camera.cc	/^KeyFrame::KeyFrame()$/;"	f	class:KeyFrame
+LoadBackground	boxplorer2.cc	/^void LoadBackground()$/;"	f
+LoadKeyFrames	boxplorer2.cc	/^void LoadKeyFrames(bool fixedFov)$/;"	f
+MAXDISPLAYS	sdl2-test.cc	24;"	d	file:
+MAX_PATH	boxplorer2.cc	23;"	d	file:
+M_PI	oculus_sdk2.cc	11;"	d	file:
+M_PI	oculus_sdk4.cc	12;"	d	file:
+NBLUR	boxplorer2.cc	507;"	d	file:
+NFBO	boxplorer2.cc	487;"	d	file:
+NO_SDL_GLEXT	boxplorer2.cc	66;"	d	file:
+NSUBFRAMES	boxplorer2.cc	1295;"	d	file:
+PROCESS	boxplorer2.cc	1048;"	d	file:
+PROCESS	boxplorer2.cc	1051;"	d	file:
+PROCESS	boxplorer2.cc	1450;"	d	file:
+PROCESS	boxplorer2.cc	1453;"	d	file:
+PROCESS	boxplorer2.cc	875;"	d	file:
+PROCESS	boxplorer2.cc	878;"	d	file:
+PROCESS	camera.cc	129;"	d	file:
+PROCESS	camera.cc	136;"	d	file:
+PROCESS	camera.cc	20;"	d	file:
+PROCESS	camera.cc	22;"	d	file:
+PROCESS	glsl.cc	154;"	d	file:
+PROCESS	glsl.cc	157;"	d	file:
+PROCESS_CONFIG_PARAMS	glsl.cc	100;"	d	file:
+ReleaseOculusSDK	oculus_sdk2.cc	/^void ReleaseOculusSDK()$/;"	f
+ReleaseOculusSDK	oculus_sdk4.cc	/^void ReleaseOculusSDK()$/;"	f
+ResetOculusOrientation	oculus_sdk2.cc	/^void ResetOculusOrientation()$/;"	f
+ResetOculusOrientation	oculus_sdk4.cc	/^void ResetOculusOrientation() {$/;"	f
+SPLINE	boxplorer2.cc	1400;"	d	file:
+SPLINE	boxplorer2.cc	1455;"	d	file:
+ST_ANAGLYPH	boxplorer2.cc	/^                  ST_ANAGLYPH,$/;"	e	enum:StereoMode	file:
+ST_COMPUTE_DE_ONLY	boxplorer2.cc	/^                  ST_COMPUTE_DE_ONLY$/;"	e	enum:StereoMode	file:
+ST_DOME	boxplorer2.cc	/^                  ST_DOME,$/;"	e	enum:StereoMode	file:
+ST_INTERLACED	boxplorer2.cc	/^                  ST_INTERLACED,$/;"	e	enum:StereoMode	file:
+ST_NONE	boxplorer2.cc	/^enum StereoMode { ST_NONE=0,$/;"	e	enum:StereoMode	file:
+ST_NONE	boxplorer2.cc	172;"	d	file:
+ST_NONE	boxplorer2.cc	174;"	d	file:
+ST_NONE	glsl.cc	26;"	d	file:
+ST_OCULUS	boxplorer2.cc	/^                  ST_OCULUS,$/;"	e	enum:StereoMode	file:
+ST_OVERUNDER	boxplorer2.cc	/^                  ST_OVERUNDER,$/;"	e	enum:StereoMode	file:
+ST_QUADBUFFER	boxplorer2.cc	/^                  ST_QUADBUFFER,$/;"	e	enum:StereoMode	file:
+ST_SIDEBYSIDE	boxplorer2.cc	/^                  ST_SIDEBYSIDE,$/;"	e	enum:StereoMode	file:
+ST_SPHERICAL	boxplorer2.cc	/^                  ST_SPHERICAL,$/;"	e	enum:StereoMode	file:
+ST_XEYED	boxplorer2.cc	/^                  ST_XEYED,$/;"	e	enum:StereoMode	file:
+SetOculusPrediction	oculus_sdk2.cc	/^void SetOculusPrediction(float time)$/;"	f
+SetOculusPrediction	oculus_sdk4.cc	/^void SetOculusPrediction(float time) {$/;"	f
+StereoMode	boxplorer2.cc	/^enum StereoMode { ST_NONE=0,$/;"	g	file:
+VERTEX_SHADER_FILE	boxplorer2.cc	86;"	d	file:
+VQ_BACK	boxplorer2.cc	479;"	d	file:
+VQ_DONE	boxplorer2.cc	484;"	d	file:
+VQ_DOWN	boxplorer2.cc	481;"	d	file:
+VQ_FRONT	boxplorer2.cc	478;"	d	file:
+VQ_LEFT	boxplorer2.cc	483;"	d	file:
+VQ_LETTER	boxplorer2.cc	485;"	d	file:
+VQ_RIGHT	boxplorer2.cc	482;"	d	file:
+VQ_UP	boxplorer2.cc	480;"	d	file:
+Vec3Uniform	uniforms.cc	/^     Vec3Uniform(const Vec3Uniform& other) :$/;"	f	class:Vec3Uniform	file:
+Vec3Uniform	uniforms.cc	/^   Vec3Uniform() : adr_(NULL) {}$/;"	f	class:Vec3Uniform
+Vec3Uniform	uniforms.cc	/^class Vec3Uniform : public iUniform {$/;"	c	file:
+ViewQuadrant	boxplorer2.cc	/^typedef int ViewQuadrant;$/;"	t	file:
+WorkingDir	boxplorer2.cc	/^string WorkingDir;  \/\/ Where current fractal code & data lives.$/;"	v
+XRES	glsl.cc	77;"	d	file:
+YRES	glsl.cc	78;"	d	file:
+__FUNCTION__	boxplorer2.cc	22;"	d	file:
+__FUNCTION__	glsl.cc	15;"	d	file:
+__FUNCTION__	sdl2-test.cc	21;"	d	file:
+__FUNCTION__	tiler.cc	9;"	d	file:
+_readFile	boxplorer2.cc	/^char* _readFile(char const* name)$/;"	f
+_strdup	boxplorer2.cc	21;"	d	file:
+activate	boxplorer2.cc	/^	void activate(ViewQuadrant vq = VQ_FRONT)$/;"	f	class:Camera
+activateGl	boxplorer2.cc	/^	void activateGl()$/;"	f	class:Camera
+adr_	uniforms.cc	/^   float* adr_;$/;"	m	class:Vec3Uniform	file:
+adr_	uniforms.cc	/^  double* adr_;$/;"	m	class:DoubleUniform	file:
+adr_	uniforms.cc	/^  float* adr_;$/;"	m	class:FloatUniform	file:
+adr_	uniforms.cc	/^  int* adr_;$/;"	m	class:BoolUniform	file:
+adr_	uniforms.cc	/^  int* adr_;$/;"	m	class:IntUniform	file:
+ahead	glsl.cc	/^vec3 ahead;$/;"	m	namespace:GLSL	file:
+anything_written	shadershrink.cc	/^int anything_written = 0;$/;"	v
+arrow_cursor	boxplorer2.cc	/^SDL_Cursor* arrow_cursor;$/;"	v
+attr_	uniforms.cc	/^   string attr_;$/;"	m	class:Vec3Uniform	file:
+attr_	uniforms.cc	/^  string attr_;$/;"	m	class:BoolUniform	file:
+attr_	uniforms.cc	/^  string attr_;$/;"	m	class:DoubleUniform	file:
+attr_	uniforms.cc	/^  string attr_;$/;"	m	class:FloatUniform	file:
+attr_	uniforms.cc	/^  string attr_;$/;"	m	class:IntUniform	file:
+background	boxplorer2.cc	/^TGA background;$/;"	v
+background_texture	boxplorer2.cc	/^GLuint background_texture;$/;"	v
+bar	boxplorer2.cc	/^TwBar* bar = NULL;$/;"	v
+bindToUI	uniforms.cc	/^   void bindToUI(void* bar) {$/;"	f	class:DoubleUniform
+bindToUI	uniforms.cc	/^   void bindToUI(void* bar) {$/;"	f	class:FloatUniform
+bindToUI	uniforms.cc	/^   void bindToUI(void* bar) {$/;"	f	class:Vec3Uniform
+bindToUI	uniforms.cc	/^   void bindToUI(void* vbar) {$/;"	f	class:BoolUniform
+bindToUI	uniforms.cc	/^   void bindToUI(void* vbar) {$/;"	f	class:IntUniform
+bindToUI	uniforms.cc	/^void Uniforms::bindToUI(void* bar) {$/;"	f	class:Uniforms
+blurFbo	boxplorer2.cc	/^GLuint blurFbo[NBLUR];$/;"	v
+blurTex	boxplorer2.cc	/^GLuint blurTex[NBLUR];$/;"	v
+brace_depth	shadershrink.cc	/^int brace_depth = 1;$/;"	v
+c	boxplorer2.cc	/^vec3 (*c)(vec3);$/;"	m	namespace:GLSL	file:
+c	glsl.cc	/^vec3 (*c)(vec3);$/;"	m	namespace:GLSL	file:
+camera	boxplorer2.cc	/^} camera,  \/\/ Active camera view.$/;"	v	typeref:class:Camera
+changeController	boxplorer2.cc	/^void changeController(SDL_Keycode key, Controller* c)$/;"	f
+clear	shader.cc	/^void Shader::clear() {$/;"	f	class:Shader
+clearGlContext	boxplorer2.cc	/^void clearGlContext()$/;"	f
+compile	shader.cc	/^bool Shader::compile(const string& defines,$/;"	f	class:Shader
+config	boxplorer2.cc	/^config;  \/\/ Global configuration set.$/;"	v	typeref:class:Camera
+d	boxplorer2.cc	/^float (*d)(vec3);$/;"	m	namespace:GLSL	file:
+d	glsl.cc	/^float (*d)(vec3);$/;"	m	namespace:GLSL	file:
+de_fbo	boxplorer2.cc	/^GLuint de_fbo;$/;"	v
+de_func	boxplorer2.cc	/^float (*de_func)(GLSL::vec3) = NULL;$/;"	v
+de_func_64	boxplorer2.cc	/^double (*de_func_64)(GLSL::dvec3) = NULL;$/;"	v
+de_func_name	boxplorer2.cc	/^string de_func_name;$/;"	v
+de_shader	boxplorer2.cc	/^Shader de_shader;$/;"	v
+de_texture	boxplorer2.cc	/^GLuint de_texture;$/;"	v
+defines	boxplorer2.cc	/^string defines;$/;"	v
+die	boxplorer2.cc	95;"	d	file:
+display_	boxplorer2.cc	/^	int display_;$/;"	m	class:GFX	file:
+display_	sdl2-test.cc	/^  int display_;$/;"	m	class:GFX	file:
+distanceTo	camera.cc	/^double KeyFrame::distanceTo(const KeyFrame& other) const$/;"	f	class:KeyFrame
+dof	boxplorer2.cc	/^Shader dof;$/;"	v
+dot	interpolate.cc	/^double dot(const double x[3], const double y[3]) {$/;"	f
+drawScreen	boxplorer2.cc	/^void drawScreen(int leftRight = 3)$/;"	f
+effects	boxplorer2.cc	/^Shader effects;$/;"	v
+fov_x	glsl.cc	/^float fov_x, fov_y;$/;"	m	namespace:GLSL	file:
+fov_y	glsl.cc	/^float fov_x, fov_y;$/;"	m	namespace:GLSL	file:
+fractal	boxplorer2.cc	/^Shader fractal;$/;"	v
+frameDurations	boxplorer2.cc	/^Uint32* frameDurations;$/;"	v
+frameDurationsIndex	boxplorer2.cc	/^int frameDurationsIndex = 0;$/;"	v
+framesToAverage	boxplorer2.cc	/^int framesToAverage;$/;"	v
+fullscreen_	boxplorer2.cc	/^	bool fullscreen_;$/;"	m	class:GFX	file:
+fullscreen_	sdl2-test.cc	/^  bool fullscreen_;$/;"	m	class:GFX	file:
+fusion	oculus_sdk2.cc	/^static OVR::SensorFusion *fusion;$/;"	v	file:
+fxaa	boxplorer2.cc	/^Shader fxaa;$/;"	v
+fxaaFbo	boxplorer2.cc	/^GLuint fxaaFbo = -1;$/;"	v
+fxaaTex	boxplorer2.cc	/^GLuint fxaaTex = -1;$/;"	v
+getBGRpixel	boxplorer2.cc	/^unsigned int getBGRpixel(int x, int y)$/;"	f
+getFPS	boxplorer2.cc	/^float getFPS(void)$/;"	f
+getLastFrameDuration	boxplorer2.cc	/^Uint32 getLastFrameDuration(void)$/;"	f
+getPixelColor	boxplorer2.cc	/^GLSL::vec3 getPixelColor(int x, int y)$/;"	f
+glSetUniformf	boxplorer2.cc	1072;"	d	file:
+glSetUniformf	boxplorer2.cc	1131;"	d	file:
+glSetUniformfv	boxplorer2.cc	1074;"	d	file:
+glSetUniformfv	boxplorer2.cc	1132;"	d	file:
+glSetUniformi	boxplorer2.cc	1076;"	d	file:
+glUniform1i	boxplorer2.cc	1133;"	d	file:
+gl_FragColor	boxplorer2.cc	/^vec4 gl_FragColor;$/;"	m	namespace:GLSL	file:
+gl_FragColor	glsl.cc	/^vec4 gl_FragColor;$/;"	m	namespace:GLSL	file:
+gl_FragCoord	boxplorer2.cc	/^vec4 gl_FragCoord;$/;"	m	namespace:GLSL	file:
+gl_FragCoord	glsl.cc	/^vec4 gl_FragCoord;$/;"	m	namespace:GLSL	file:
+gl_FragDepth	boxplorer2.cc	/^float gl_FragDepth;$/;"	m	namespace:GLSL	file:
+gl_FragDepth	glsl.cc	/^float gl_FragDepth;$/;"	m	namespace:GLSL	file:
+glcontext_	boxplorer2.cc	/^	SDL_GLContext glcontext_;$/;"	m	class:GFX	file:
+glsl_source	boxplorer2.cc	/^string glsl_source;$/;"	v
+grabbedInput	boxplorer2.cc	/^int grabbedInput = 0;$/;"	v
+hand_cursor	boxplorer2.cc	/^SDL_Cursor* hand_cursor;$/;"	v
+height	boxplorer2.cc	/^	int height() const$/;"	f	class:GFX
+height	sdl2-test.cc	/^  int height() const { return height_; }$/;"	f	class:GFX
+height_	boxplorer2.cc	/^	int width_, height_;  \/\/ current dimensions, window or fullscreen.$/;"	m	class:GFX	file:
+height_	sdl2-test.cc	/^  int width_, height_;  \/\/ current dimensions, window or fullscreen.$/;"	m	class:GFX	file:
+hmd	oculus_sdk2.cc	/^static OVR::HMDDevice *hmd;$/;"	v	file:
+hmd	oculus_sdk4.cc	/^static ovrHmd hmd = NULL;$/;"	v	file:
+hmdinfo	oculus_sdk2.cc	/^static OVR::HMDInfo hmdinfo;$/;"	v	file:
+in_comment	shadershrink.cc	/^int in_comment = 0;$/;"	v
+init	boxplorer2.cc	/^	void init()$/;"	f	class:GFX
+initFPS	boxplorer2.cc	/^void initFPS(int framesToAverage_)$/;"	f
+initGraphics	boxplorer2.cc	/^bool initGraphics(bool fullscreenToggle, int w, int h, int frameno = 0)$/;"	f
+initTwBar	boxplorer2.cc	/^void initTwBar(enum StereoMode stereoMode)$/;"	f
+initTwParDefines	boxplorer2.cc	/^void initTwParDefines()$/;"	f
+initTwUniform	boxplorer2.cc	/^void initTwUniform(const string& name, void* addr)$/;"	f
+init_system_cursor	boxplorer2.cc	/^static SDL_Cursor *init_system_cursor(const char *image[])$/;"	f	file:
+joystick	boxplorer2.cc	/^SDL_Joystick* joystick = NULL;$/;"	v
+kHand	boxplorer2.cc	/^static const char *kHand[] =$/;"	v	file:
+kKEYFRAME	boxplorer2.cc	/^const char* kKEYFRAME = "keyframe";$/;"	v
+kMAXDISPLAYS	boxplorer2.cc	/^static const int kMAXDISPLAYS = 6;$/;"	v	file:
+keyframes	boxplorer2.cc	/^vector<KeyFrame> keyframes;  \/\/ Keyframes$/;"	v
+lastFrameTime	boxplorer2.cc	/^Uint32 lastFrameTime;$/;"	v
+last_char	shadershrink.cc	/^char last_char = '\\n';$/;"	v
+last_height_	boxplorer2.cc	/^	int last_width_, last_height_;  \/\/ last known dimension of window.$/;"	m	class:GFX	file:
+last_height_	sdl2-test.cc	/^  int last_width_, last_height_;  \/\/ last known dimension of window.$/;"	m	class:GFX	file:
+last_width_	boxplorer2.cc	/^	int last_width_, last_height_;  \/\/ last known dimension of window.$/;"	m	class:GFX	file:
+last_width_	sdl2-test.cc	/^  int last_width_, last_height_;  \/\/ last known dimension of window.$/;"	m	class:GFX	file:
+last_x_	boxplorer2.cc	/^	int last_x_,last_y_;  \/\/ last known position of window$/;"	m	class:GFX	file:
+last_x_	sdl2-test.cc	/^  int last_x_,last_y_;  \/\/ last known position of window$/;"	m	class:GFX	file:
+last_y_	boxplorer2.cc	/^	int last_x_,last_y_;  \/\/ last known position of window$/;"	m	class:GFX	file:
+last_y_	sdl2-test.cc	/^  int last_x_,last_y_;  \/\/ last known position of window$/;"	m	class:GFX	file:
+lifeform	boxplorer2.cc	/^string lifeform;  \/\/ Conway's Game of Life creature, if any.$/;"	v
+link	uniforms.cc	/^   bool link(KeyFrame* kf) {$/;"	f	class:BoolUniform
+link	uniforms.cc	/^   bool link(KeyFrame* kf) {$/;"	f	class:DoubleUniform
+link	uniforms.cc	/^   bool link(KeyFrame* kf) {$/;"	f	class:FloatUniform
+link	uniforms.cc	/^   bool link(KeyFrame* kf) {$/;"	f	class:IntUniform
+link	uniforms.cc	/^   bool link(KeyFrame* kf) {$/;"	f	class:Vec3Uniform
+link	uniforms.cc	/^void Uniforms::link(KeyFrame* kf) {$/;"	f	class:Uniforms
+loadConfig	boxplorer2.cc	/^	bool loadConfig(const string& configFile, string* defines = NULL)$/;"	f	class:Camera
+loadConfig	glsl.cc	/^bool loadConfig(char const* configFile) {$/;"	f	namespace:GLSL
+m_mul	boxplorer2.cc	/^void m_mul(float* x, int d)$/;"	f
+m_mulSlow	boxplorer2.cc	/^void m_mulSlow(double* x, int d)$/;"	f
+m_mulSlow	boxplorer2.cc	/^void m_mulSlow(float* x, int d)$/;"	f
+m_progressiveAdd	boxplorer2.cc	/^void m_progressiveAdd(double* x, int d)$/;"	f
+m_progressiveAdd	boxplorer2.cc	/^void m_progressiveAdd(float* x, int d)$/;"	f
+m_progressiveInc	boxplorer2.cc	/^void m_progressiveInc(int* x, int d)$/;"	f
+m_rotateX	boxplorer2.cc	/^void m_rotateX(int d)$/;"	f
+m_rotateX2	boxplorer2.cc	/^void m_rotateX2(float d)$/;"	f
+m_rotateY	boxplorer2.cc	/^void m_rotateY(int d)$/;"	f
+m_rotateY2	boxplorer2.cc	/^void m_rotateY2(float d)$/;"	f
+m_rotateZ2	boxplorer2.cc	/^void m_rotateZ2(float d)$/;"	f
+m_singlePress	boxplorer2.cc	/^void m_singlePress(int* x, int d)$/;"	f
+m_tan	boxplorer2.cc	/^void m_tan(float* x, int d)$/;"	f
+main	boxplorer2.cc	/^int main(int argc, char **argv)$/;"	f
+main	edit-cfg.cc	/^int main(int argc, char* argv[]) {$/;"	f
+main	glsl.cc	/^int main(int argc, char* argv[]) {$/;"	f
+main	sdl2-test.cc	/^int main(int argc, char* argv[]) {$/;"	f
+main	shadershrink.cc	/^int main(int argc, char** argv) {$/;"	f
+main	tiler.cc	/^int main(int argc, char* argv[]) {$/;"	f
+mainDepth	boxplorer2.cc	/^GLuint mainDepth[NFBO];$/;"	v
+mainFbo	boxplorer2.cc	/^GLuint mainFbo[NFBO];$/;"	v
+mainTex	boxplorer2.cc	/^GLuint mainTex[NFBO];$/;"	v
+manager	oculus_sdk2.cc	/^static OVR::DeviceManager *manager;$/;"	v	file:
+map_address	camera.cc	/^void* KeyFrame::map_address(const string& type, const string& name, int n)$/;"	f	class:KeyFrame
+mat2quat	interpolate.cc	/^void mat2quat(const double *m1, double *q) {$/;"	f
+max	boxplorer2.cc	115;"	d	file:
+min	boxplorer2.cc	118;"	d	file:
+mixHydraOrientation	boxplorer2.cc	/^	void mixHydraOrientation(float* quat)$/;"	f	class:Camera
+mixSensorOrientation	boxplorer2.cc	/^	void mixSensorOrientation(float q[4])$/;"	f	class:Camera
+mode_	boxplorer2.cc	/^	SDL_DisplayMode mode_[kMAXDISPLAYS];$/;"	m	class:GFX	file:
+mode_	sdl2-test.cc	/^  SDL_DisplayMode mode_[MAXDISPLAYS];$/;"	m	class:GFX	file:
+mslerp	interpolate.cc	/^void mslerp(const double *m1,const double *m2,double *mr,double t) {$/;"	f
+name	uniforms.cc	/^   const string& name() { return name_; }$/;"	f	class:BoolUniform
+name	uniforms.cc	/^   const string& name() { return name_; }$/;"	f	class:DoubleUniform
+name	uniforms.cc	/^   const string& name() { return name_; }$/;"	f	class:FloatUniform
+name	uniforms.cc	/^   const string& name() { return name_; }$/;"	f	class:IntUniform
+name	uniforms.cc	/^   const string& name() { return name_; }$/;"	f	class:Vec3Uniform
+name_	uniforms.cc	/^   string name_;$/;"	m	class:Vec3Uniform	file:
+name_	uniforms.cc	/^  string name_;$/;"	m	class:BoolUniform	file:
+name_	uniforms.cc	/^  string name_;$/;"	m	class:DoubleUniform	file:
+name_	uniforms.cc	/^  string name_;$/;"	m	class:FloatUniform	file:
+name_	uniforms.cc	/^  string name_;$/;"	m	class:IntUniform	file:
+ndisplays_	boxplorer2.cc	/^	int ndisplays_;$/;"	m	class:GFX	file:
+normalize	interpolate.cc	/^bool normalize(double x[3]) {$/;"	f
+now	boxplorer2.cc	/^double now()$/;"	f
+ok	uniforms.cc	/^   bool ok() { return adr_ != NULL; }$/;"	f	class:BoolUniform
+ok	uniforms.cc	/^   bool ok() { return adr_ != NULL; }$/;"	f	class:DoubleUniform
+ok	uniforms.cc	/^   bool ok() { return adr_ != NULL; }$/;"	f	class:FloatUniform
+ok	uniforms.cc	/^   bool ok() { return adr_ != NULL; }$/;"	f	class:IntUniform
+ok	uniforms.cc	/^   bool ok() { return adr_ != NULL; }$/;"	f	class:Vec3Uniform
+operator =	boxplorer2.cc	/^	Camera& operator=(const KeyFrame& other)$/;"	f	class:Camera
+orthogonalize	camera.cc	/^void KeyFrame::orthogonalize()$/;"	f	class:KeyFrame
+parse	uniforms.cc	/^   bool parse(const string& line) {$/;"	f	class:BoolUniform
+parse	uniforms.cc	/^   bool parse(const string& line) {$/;"	f	class:DoubleUniform
+parse	uniforms.cc	/^   bool parse(const string& line) {$/;"	f	class:FloatUniform
+parse	uniforms.cc	/^   bool parse(const string& line) {$/;"	f	class:IntUniform
+parse	uniforms.cc	/^   bool parse(const string& line) {$/;"	f	class:Vec3Uniform
+parseFromGlsl	uniforms.cc	/^bool Uniforms::parseFromGlsl(const string& glsl) {$/;"	f	class:Uniforms
+parseLine	uniforms.cc	/^  bool parseLine(const string& line,$/;"	f	namespace:__anon1
+parseLine	uniforms.cc	/^bool Uniforms::parseLine(const string& line, iUniformPtr* uni) {$/;"	f	class:Uniforms
+polarity	boxplorer2.cc	/^int polarity = 1;$/;"	v
+pos	glsl.cc	/^vec3 pos;$/;"	m	namespace:GLSL	file:
+printController	boxplorer2.cc	/^char* printController(char* s, Controller c)$/;"	f
+print_stripped_line	shadershrink.cc	/^void print_stripped_line(char* s) {$/;"	f
+qinvert	interpolate.cc	/^void qinvert(double* qout, const double* q) {$/;"	f
+qmul	interpolate.cc	/^void qmul(double* q1, const double* q2) {$/;"	f
+qnormalize	interpolate.cc	/^void qnormalize(double* q) {$/;"	f
+qslerp	interpolate.cc	/^void qslerp(const double *q1,const double *q2,double *qr,double t) {$/;"	f
+quat2mat	interpolate.cc	/^void quat2mat(const double *q,double *m) {$/;"	f
+quat2x	interpolate.cc	/^void quat2x(const double* q, double* x) {$/;"	f
+readFile	boxplorer2.cc	/^bool readFile(const string& name, string* content)$/;"	f
+rect_	boxplorer2.cc	/^	SDL_Rect rect_[kMAXDISPLAYS];$/;"	m	class:GFX	file:
+rect_	sdl2-test.cc	/^  SDL_Rect rect_[MAXDISPLAYS];$/;"	m	class:GFX	file:
+render	boxplorer2.cc	/^	void render(enum StereoMode stereo, ViewQuadrant vq = VQ_FRONT)$/;"	f	class:Camera
+renderer	sdl2-test.cc	/^  SDL_Renderer* renderer() { return renderer_; }$/;"	f	class:GFX
+renderer_	sdl2-test.cc	/^  SDL_Renderer* renderer_;$/;"	m	class:GFX	file:
+reset	boxplorer2.cc	/^	void reset()$/;"	f	class:GFX
+reset	sdl2-test.cc	/^  void reset() {$/;"	f	class:GFX
+resize	boxplorer2.cc	/^	bool resize(int w, int h)$/;"	f	class:GFX
+resize	sdl2-test.cc	/^  void resize(int w, int h) {$/;"	f	class:GFX
+rotate	camera.cc	/^void KeyFrame::rotate(double deg, double x, double y, double z)$/;"	f	class:KeyFrame
+sanitizeParameters	boxplorer2.cc	/^	void sanitizeParameters(void)$/;"	f	class:Camera
+sanitizeParameters	glsl.cc	/^void sanitizeParameters(void) {$/;"	f	namespace:GLSL
+saveConfig	boxplorer2.cc	/^	void saveConfig(const string& configFile, string* defines = NULL)$/;"	f	class:Camera
+saveScreenshot	boxplorer2.cc	/^void saveScreenshot(char const* tgaFile)$/;"	f
+scratchFbo	boxplorer2.cc	/^GLuint scratchFbo = -1;$/;"	v
+scratchTex	boxplorer2.cc	/^GLuint scratchTex = -1;$/;"	v
+send	uniforms.cc	/^   void send(int program) {$/;"	f	class:BoolUniform
+send	uniforms.cc	/^   void send(int program) {$/;"	f	class:DoubleUniform
+send	uniforms.cc	/^   void send(int program) {$/;"	f	class:FloatUniform
+send	uniforms.cc	/^   void send(int program) {$/;"	f	class:IntUniform
+send	uniforms.cc	/^   void send(int program) {$/;"	f	class:Vec3Uniform
+send	uniforms.cc	/^void Uniforms::send(int program) {$/;"	f	class:Uniforms
+sensor	oculus_sdk2.cc	/^static OVR::SensorDevice *sensor;$/;"	v	file:
+setUniforms	boxplorer2.cc	/^	void setUniforms(float x_scale, float x_offset,$/;"	f	class:Camera
+setupDirectories	boxplorer2.cc	/^bool setupDirectories(const char* configFile)$/;"	f
+setupShaders	boxplorer2.cc	/^bool setupShaders(Shader* fractal, const char* extra_define = NULL)$/;"	f
+setupShaders2	boxplorer2.cc	/^bool setupShaders2(void)$/;"	f
+sign	boxplorer2.cc	184;"	d	file:
+stereoMode	boxplorer2.cc	/^                } stereoMode = ST_NONE;$/;"	v	typeref:enum:StereoMode
+suggestDeltaTime	boxplorer2.cc	/^void suggestDeltaTime(KeyFrame& camera, const vector<KeyFrame>& keyframes)$/;"	f
+toString	uniforms.cc	/^   string toString() {$/;"	f	class:BoolUniform
+toString	uniforms.cc	/^   string toString() {$/;"	f	class:DoubleUniform
+toString	uniforms.cc	/^   string toString() {$/;"	f	class:FloatUniform
+toString	uniforms.cc	/^   string toString() {$/;"	f	class:IntUniform
+toString	uniforms.cc	/^   string toString() {$/;"	f	class:Vec3Uniform
+toggleFullscreen	boxplorer2.cc	/^	bool toggleFullscreen()$/;"	f	class:GFX
+toggleFullscreen	sdl2-test.cc	/^  void toggleFullscreen() {$/;"	f	class:GFX
+type_	uniforms.cc	/^   string type_;$/;"	m	class:Vec3Uniform	file:
+type_	uniforms.cc	/^  string type_;$/;"	m	class:BoolUniform	file:
+type_	uniforms.cc	/^  string type_;$/;"	m	class:DoubleUniform	file:
+type_	uniforms.cc	/^  string type_;$/;"	m	class:FloatUniform	file:
+type_	uniforms.cc	/^  string type_;$/;"	m	class:IntUniform	file:
+uniforms	boxplorer2.cc	/^Uniforms uniforms;$/;"	v
+unmixSensorOrientation	boxplorer2.cc	/^	void unmixSensorOrientation(float q[4])$/;"	f	class:Camera
+up	glsl.cc	/^vec3 up;$/;"	m	namespace:GLSL	file:
+updateControllerX	boxplorer2.cc	/^void updateControllerX(Controller c, int d, bool alt)$/;"	f
+updateControllerY	boxplorer2.cc	/^void updateControllerY(Controller c, int d, bool alt)$/;"	f
+updateFPS	boxplorer2.cc	/^void updateFPS(void)$/;"	f
+vertex_main	glsl.cc	/^int vertex_main(int argc, char* argv[]) {$/;"	f	namespace:GLSL
+viewportOffset	boxplorer2.cc	/^int viewportOffset[2];$/;"	v
+w	interpolate.cc	125;"	d	file:
+w	interpolate.cc	132;"	d	file:
+width	boxplorer2.cc	/^	int width() const$/;"	f	class:GFX
+width	sdl2-test.cc	/^  int width() const { return width_; }$/;"	f	class:GFX
+width_	boxplorer2.cc	/^	int width_, height_;  \/\/ current dimensions, window or fullscreen.$/;"	m	class:GFX	file:
+width_	sdl2-test.cc	/^  int width_, height_;  \/\/ current dimensions, window or fullscreen.$/;"	m	class:GFX	file:
+window	boxplorer2.cc	/^	SDL_Window* window()$/;"	f	class:GFX
+window	boxplorer2.cc	/^} window;$/;"	v	typeref:class:GFX
+window_	boxplorer2.cc	/^	SDL_Window* window_;$/;"	m	class:GFX	file:
+window_	sdl2-test.cc	/^  SDL_Window* window_;$/;"	m	class:GFX	file:
+x	interpolate.cc	122;"	d	file:
+x	interpolate.cc	135;"	d	file:
+x2quat	interpolate.cc	/^void x2quat(const double* x, double *q) {$/;"	f
+xGL_FLOAT	boxplorer2.cc	2170;"	d	file:
+xGL_RGBA32F	boxplorer2.cc	2169;"	d	file:
+y	interpolate.cc	123;"	d	file:
+y	interpolate.cc	134;"	d	file:
+z	interpolate.cc	124;"	d	file:
+z	interpolate.cc	133;"	d	file:
+~BoolUniform	uniforms.cc	/^   virtual ~BoolUniform() {}$/;"	f	class:BoolUniform
+~DoubleUniform	uniforms.cc	/^   virtual ~DoubleUniform() {}$/;"	f	class:DoubleUniform
+~FloatUniform	uniforms.cc	/^   virtual ~FloatUniform() {}$/;"	f	class:FloatUniform
+~GFX	boxplorer2.cc	/^	~GFX()$/;"	f	class:GFX
+~GFX	sdl2-test.cc	/^  ~GFX() {$/;"	f	class:GFX
+~IntUniform	uniforms.cc	/^   virtual ~IntUniform() {}$/;"	f	class:IntUniform
+~Vec3Uniform	uniforms.cc	/^   virtual ~Vec3Uniform() {}$/;"	f	class:Vec3Uniform
