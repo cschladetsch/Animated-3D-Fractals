@@ -3,8 +3,13 @@
 //mandelbulb mod.by visual/bermarte>thanx 2 Xyrus and 2 subblue
 // - http://www.fractalforums.com/3d-fractal-generation/amazing-fractal
 
+#ifdef GL_ES
+precision highp float;
+precision highp int;
+#endif
+
 #define DE de_bulb
-#define COLOR color_bulb
+#define COLOR(pos, dist) color_bulb(pos, dist)
 
 #define INOUT(a,b) inout a b
 
@@ -90,50 +95,17 @@ float de_bulb(vec3 z0) {
 	return bulb * DIST_MULTIPLIER;
 }
 
-vec3 color_bulb(vec3 z0) {
-	vec3 c;
-  if (julia) c = JuliaVector; else c = z0;
-	vec3 z = z0;
-
- 	float pd = Power - 1.0;		
-
-	float r	 = length(z);
-	float th = atan(z.x, z.y);
-	float ph = asin(z.z / r);
-
-	vec3 dz = vec3(0,0,0);
-	float ph_dz = 0.0;
-	float th_dz = 0.0;
-	float r_dz = 1.0;
-	float powR, powRsin;
-	float trap = 1.0;
-
-	for (int n = 0; n < color_iters; n++) {
-		powR = Power * pow(r, pd);
-		powRsin = powR * r_dz * sin(ph_dz + pd*ph);
-		dz.x = powRsin * cos(th_dz + pd*th) + 1.0;
-		dz.y = powRsin * sin(th_dz + pd*th);
-		dz.z = powR * r_dz * cos(ph_dz + pd*ph);
-
-		r_dz  = length(dz);
-		th_dz = atan(dz.x, dz.y);
-		ph_dz = acos(dz.z / r_dz);
-		powR = pow(r, Power);
-		powRsin = sin(Power*ph);
-		z.x = powR * powRsin * cos(Power*th);
-		z.y = powR * powRsin * sin(Power*th);
-		z.z = powR * cos(Power*ph);
-		z += c;
-
-		r  = length(z);
-
-		th = atan(z.x, z.y)+10.0;
-		ph = acos(z.z / r)+10.0;
-		trap = min(trap, r);
-	}
-
-	vec2 cl = clamp(vec2( .33*log(r)-1.0, trap), 0.0, 1.0);
-	return mix(mix(surfaceColor1, surfaceColor2, cl.y), surfaceColor3, cl.x);
+vec3 color_bulb(vec3 z0, float rayDistance) {
+	// Use absolute position distance from origin for consistent coloring
+	float depth = length(z0);
+	
+	// Create depth-based color mixing based on distance from origin
+	float depthFactor1 = clamp(depth * 0.5, 0.0, 1.0);
+	float depthFactor2 = clamp((depth - 1.0) * 0.3, 0.0, 1.0);
+	
+	// Mix colors based on absolute distance from fractal center
+	vec3 nearColor = mix(surfaceColor1, surfaceColor2, depthFactor1);
+	return mix(nearColor, surfaceColor3, depthFactor2);
 }
 
 float normal_eps = 0.00001;
@@ -230,7 +202,7 @@ void main() {
   // We've got a hit or we're not sure.
   if (D < MAX_DIST) {
     vec3 n = normal(p, D);
-    col = COLOR(p);
+    col = COLOR(p, totalD);
     col = blinn_phong(n, -dp, normalize(eye_in+lightVector+dp), col);
     col = mix(aoColor, col, ambient_occlusion(p, n));
 
