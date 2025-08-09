@@ -1,6 +1,30 @@
+#
+# Animated 3D Fractals - Interactive Real-Time Fractal Explorer
+# 
+# Modern CMake build system for a powerful 3D fractal rendering engine
+# Features: Real-time exploration, animation system, multiple output formats
+#
+# Requirements:
+#   - CMake 3.16+
+#   - C++17 compatible compiler  
+#   - OpenGL 3.0+
+#   - Git (for submodules)
+#
+# Build Instructions:
+#   mkdir build && cd build
+#   cmake ..
+#   cmake --build .
+#
+# Dependencies (included as submodules):
+#   - SDL2 2.32.8: Graphics, input, window management
+#   - Google Test: Unit testing framework
+#
+
 cmake_minimum_required(VERSION 3.16)
 
-project(Animated3DFractals VERSION 1.0.0 LANGUAGES CXX)
+project(Animated3DFractals VERSION 1.0.0 LANGUAGES CXX
+        DESCRIPTION "Interactive Real-Time 3D Fractal Explorer"
+        HOMEPAGE_URL "https://github.com/cschladetsch/Animated-3D-Fractals")
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
@@ -87,9 +111,11 @@ target_link_libraries(fractal_core
 # Main executable
 add_executable(boxplorer2
     source/boxplorer2.cpp
+)
+
+# Tiler executable (separate program)
+add_executable(tiler
     source/tiler.cpp
-    source/oculus_sdk2.cpp
-    source/oculus_sdk4.cpp
 )
 
 target_link_libraries(boxplorer2 

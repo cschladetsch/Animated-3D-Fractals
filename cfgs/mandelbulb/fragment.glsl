@@ -17,10 +17,6 @@
 
 #define JuliaVector par[1]
 
-// Camera position and direction.
-varying vec3 eye, dir;
-varying float zoom;
-
 // Interactive parameters.
 uniform vec3 par[20];
 uniform bool julia;
@@ -31,11 +27,11 @@ uniform float ao_strength;  // Strength of ambient occlusion. {min=0 max=.01 ste
 uniform float glow_strength;  // How much glow is applied after max_steps. {min=0 max=10 step=.05}
 uniform float dist_to_color;  // How is background mixed with the surface color after max_steps. {min=0 max=10 step=.05}
 
-uniform float xres, yres, time, speed;
-
 uniform int iters;  // Number of fractal iterations. {min=1 max=100}
 uniform int color_iters;  // Number of fractal iterations for coloring. {min=1 max=100}
 uniform int max_steps;  // Maximum raymarching steps. {min=1 max=200}
+
+#include "setup.inc"
 
 // Colors. Can be negative or >1 for interestiong effects.
 #define backgroundColor par[3]
@@ -45,8 +41,6 @@ uniform int max_steps;  // Maximum raymarching steps. {min=1 max=200}
 #define specularColor par[7]
 #define glowColor par[3]
 #define lightVector par[9]
-
-#include "setup.inc"
 
 vec3  aoColor = vec3(.1, .1, .1);
 
