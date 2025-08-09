@@ -37,24 +37,47 @@ A powerful real-time 3D fractal rendering engine with interactive navigation, an
 
 ### Build Instructions
 
+#### Modern CMake Build (Recommended)
 ```bash
-# Clone and initialize
+# Clone the repository
 git clone <repository-url>
 cd Animated-3D-Fractals
+
+# Initialize submodules (SDL2 2.32.8 and Google Test)
 git submodule update --init --recursive
 
-# Build with CMake
+# Create build directory and configure
 mkdir build && cd build
 cmake ..
+
+# Build the project
 cmake --build .
 
-# Verify installation
-./unit_tests && ./sdl2-test
+# Run unit tests to verify installation
+./unit_tests
+
+# Test SDL2 integration
+./sdl2-test
+```
+
+#### Legacy Makefile Build
+For legacy systems, simple makefiles are provided for Linux, Win32, and OSX.
+```bash
+# Copy appropriate makefile
+cp Makefile.linux Makefile  # or Makefile.osx, Makefile.win32
+
+# Build with make
+make
 ```
 
 ### Running the Application
 ```bash
+# Basic usage - explore mandelbulb fractal interactively
 ./build/boxplorer2 cfgs/mandelbulb/default.cfg
+
+# Try different fractal types
+./build/boxplorer2 cfgs/menger.cfg.data/default.cfg
+./build/boxplorer2 cfgs/colonoscopy/default.cfg
 ```
 
 ## Project Structure
@@ -72,6 +95,56 @@ cmake --build .
 └── build/            # Build output directory
 ```
 
+## System Architecture
+
+```mermaid
+graph TD
+    A[boxplorer2 Main] --> B[SDL2 Window/Input]
+    A --> C[OpenGL Renderer]
+    A --> D[Config Parser]
+    
+    C --> E[GLSL Shaders]
+    E --> F[Distance Estimator]
+    E --> G[Color Function]
+    E --> H[Ray Marching]
+    
+    D --> I[Fractal Parameters]
+    D --> J[Camera Settings]
+    D --> K[Animation Keyframes]
+    
+    B --> L[Mouse/Keyboard Input]
+    L --> M[Camera Controller]
+    M --> N[Navigation System]
+    
+    C --> O[Frame Buffer]
+    O --> P[Post Processing]
+    P --> Q[Final Output]
+```
+
+## Rendering Pipeline
+
+```mermaid
+flowchart LR
+    A[Config File] --> B[Load Parameters]
+    B --> C[Initialize OpenGL]
+    C --> D[Compile Shaders]
+    D --> E[Ray Marching Loop]
+    
+    E --> F{Hit Surface?}
+    F -->|Yes| G[Calculate Color]
+    F -->|No| H[Background Color]
+    
+    G --> I[Depth-Based RGB]
+    I --> J[Apply Lighting]
+    J --> K[Anti-Aliasing]
+    H --> K
+    
+    K --> L[Display Frame]
+    L --> M{Continue?}
+    M -->|Yes| E
+    M -->|No| N[Exit]
+```
+
 ## Dependencies
 
 ### Included as Git Submodules
@@ -85,11 +158,19 @@ cmake --build .
 
 ## Testing
 
-27 unit tests validate core functionality including interpolation, camera movement, and matrix transformations:
+The project includes comprehensive unit tests using Google Test framework:
+- `test_interpolate.cpp`: Tests for mathematical interpolation functions (16 tests)
+- `test_camera.cpp`: Tests for camera and keyframe functionality (11 tests)
 
 ```bash
+# Run all tests
 ./build/unit_tests
+
+# Or use CMake/CTest
+cd build && make test
 ```
+
+All 27 tests validate core functionality including quaternion operations, camera movement, interpolation, and matrix transformations.
 
 ## Interactive Controls
 
@@ -201,12 +282,38 @@ The `cfgs/` directory contains various fractal configurations:
 
 ## Creating Animations
 
-1. **Explore**: Use mouse and keyboard to navigate to interesting viewpoints
-2. **Set Keyframes**: Press `Space` to add current position as keyframe
-3. **Preview**: Press `Home` to interpolate and preview the path
-4. **Adjust**: Use `Tab` to navigate keyframes and fine-tune positions
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant A as Application
+    participant K as Keyframe System
+    participant R as Renderer
+    
+    U->>A: Navigate to viewpoint
+    U->>K: Press Space (add keyframe)
+    K->>K: Store position/rotation/parameters
+    
+    U->>A: Navigate to next viewpoint
+    U->>K: Press Space (add keyframe)
+    
+    U->>K: Press Home (preview)
+    K->>K: Interpolate between keyframes
+    K->>R: Generate animation path
+    R->>U: Display preview
+    
+    U->>A: Launch with --render
+    A->>K: Load keyframes
+    K->>R: Generate frame sequence
+    R->>R: Export image files
+```
+
+### Animation Steps
+1. **Explore**: Navigate to interesting viewpoints
+2. **Set Keyframes**: Press `Space` to add current position
+3. **Preview**: Press `Home` to interpolate and preview path
+4. **Adjust**: Use `Tab` to navigate and fine-tune keyframes
 5. **Render**: Use `--render` flag to export image sequence
-6. **Convert**: Use external tools (ffmpeg) to create video from images
+6. **Convert**: Use external tools (ffmpeg) to create video
 
 ## Performance Tips
 
@@ -235,9 +342,11 @@ The `cfgs/` directory contains various fractal configurations:
 
 ## Troubleshooting
 
-- Ensure OpenGL 3.0+ graphics driver support
-- WSL2: Set `DISPLAY` variable for X11 forwarding
-- Adjust `mouse_rot_speed` in config files if controls are too sensitive
+- Ensure graphics drivers support OpenGL 3.0+
+- For WSL2: Use X11 forwarding or run with `DISPLAY` variable set
+- If mouse controls are too sensitive, adjust `mouse_rot_speed` in config files
+- For stable viewing in WSL2/X11, use keyboard controls primarily
+- Use `./sdl2-test` to verify SDL2 integration is working
 
 ---
 
