@@ -15,42 +15,42 @@ TW_OBJS=TwBar.obj TwFonts.obj TwMgr.obj TwColors.obj TwOpenGL.obj \
 	TwEventSDL.obj TwEventSDL12.obj TwEventSDL13.obj TwEventSDL20.obj \
 	LoadOGLCore.obj TwOpenGLCore.obj
 
-BX_OBJS=boxplorer2.obj interpolate.obj uniforms.obj camera.obj shader.obj \
-				oculus_sdk4.obj
+BX_OBJS=source\boxplorer2.obj source\interpolate.obj source\uniforms.obj source\camera.obj source\shader.obj \
+				source\oculus_sdk4.obj
 
 boxplorer2.exe: $(BX_OBJS) $(TW_OBJS)
 	link $(LDFLAGS) $(BX_OBJS) $(TW_OBJS)
 
-sdl2-test.exe: sdl2-test.cc
-	cl $(CFLAGS) sdl2-test.cc $(LDFLAGS)
+sdl2-test.exe: source\sdl2-test.cpp
+	cl $(CFLAGS) source\sdl2-test.cpp $(LDFLAGS)
 
-shadershrink.exe: shadershrink.cc Makefile.win32
-	cl $(CFLAGS) shadershrink.cc $(LDFLAGS)
+shadershrink.exe: source\shadershrink.cpp Makefile.win32
+	cl $(CFLAGS) source\shadershrink.cpp $(LDFLAGS)
 
-glsl.exe: glsl.cc TGA.h glsl.h Makefile.win32
-        cl $(CFLAGS) glsl.cc $(LDFLAGS)
+glsl.exe: source\glsl.cpp include\TGA.h include\glsl.h Makefile.win32
+        cl $(CFLAGS) source\glsl.cpp $(LDFLAGS)
 
-edit-cfg.exe: edit-cfg.cc Makefile.win32
-	cl $(CFLAGS) edit-cfg.cc $(LDFLAGS)
+edit-cfg.exe: source\edit-cfg.cpp Makefile.win32
+	cl $(CFLAGS) source\edit-cfg.cpp $(LDFLAGS)
 
-boxplorer2.obj: boxplorer2.cc default_shaders.h shader_procs.h TGA.h Makefile.win32 \
-        glsl.h interpolate.h uniforms.h camera.h shader.h params.h cfgs\menger.cfg.data\fragment.glsl include\setup.inc
-	cl -c $(CFLAGS) boxplorer2.cc
+source\boxplorer2.obj: source\boxplorer2.cpp include\default_shaders.h include\shader_procs.h include\TGA.h Makefile.win32 \
+        include\glsl.h include\interpolate.h include\uniforms.h include\camera.h include\shader.h include\params.h cfgs\menger.cfg.data\fragment.glsl include\setup.inc
+	cl -c $(CFLAGS) source\boxplorer2.cpp -Fo:source\boxplorer2.obj
 
-oculus4_sdk.obj: oculus4_sdk.cc oculus4_sdk.h
-	cl -c $(CFLAGS) oculus4_sdk.cc
+source\oculus_sdk4.obj: source\oculus_sdk4.cpp include\oculus_sdk4.h
+	cl -c $(CFLAGS) source\oculus_sdk4.cpp -Fo:source\oculus_sdk4.obj
 
-interpolate.obj: interpolate.cc interpolate.h
-	cl -c $(CFLAGS) interpolate.cc
+source\interpolate.obj: source\interpolate.cpp include\interpolate.h
+	cl -c $(CFLAGS) source\interpolate.cpp -Fo:source\interpolate.obj
 
-shader.obj: shader.cc shader.h
-	cl -c $(CFLAGS) shader.cc
+source\shader.obj: source\shader.cpp include\shader.h
+	cl -c $(CFLAGS) source\shader.cpp -Fo:source\shader.obj
 
-uniforms.obj: uniforms.cc uniforms.h
-	cl -c $(CFLAGS) uniforms.cc
+source\uniforms.obj: source\uniforms.cpp include\uniforms.h
+	cl -c $(CFLAGS) source\uniforms.cpp -Fo:source\uniforms.obj
 
-camera.obj: camera.cc camera.h params.h
-	cl -c $(CFLAGS) camera.cc
+source\camera.obj: source\camera.cpp include\camera.h include\params.h
+	cl -c $(CFLAGS) source\camera.cpp -Fo:source\camera.obj
 
 TwBar.obj: AntTweakBar\src\TwBar.cpp
 	cl -c $(CFLAGS) $**

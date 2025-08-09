@@ -1,7 +1,41 @@
+Code Structure:
+- Source files (.cpp): Located in source/ directory
+- Header files (.h): Located in include/ directory
+- Unit tests: Located in tests/ directory
+- External dependencies: Located in External/ directory (Google Test)
+
+Build Instructions:
+
+## Modern CMake Build (Recommended)
+```bash
+# Initialize submodules (for Google Test)
+git submodule update --init --recursive
+
+# Create build directory
+mkdir build && cd build
+
+# Configure and build
+cmake ..
+make
+
+# Run unit tests
+make test
+# or
+./unit_tests
+```
+
+## Legacy Makefile Build
 Added simple makefiles for linux, win32 and osx. Mild testing on all got done.
 Copy Makefile.? to Makefile and run make/nmake.
 
 You'll need SDL2 ( http://www.libsdl.org/download-2.0.php )
+
+## Testing
+The project includes comprehensive unit tests using Google Test framework:
+- `test_interpolate.cpp`: Tests for mathematical interpolation functions
+- `test_camera.cpp`: Tests for camera and keyframe functionality
+
+Run tests with: `make test` or `./unit_tests` from build directory
 
 Compared to starting point boxplorer-1.02:
 - added z-buffering splining, rough keyframe editing and visualization.

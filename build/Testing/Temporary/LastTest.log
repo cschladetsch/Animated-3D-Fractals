@@ -1,0 +1,83 @@
+Start testing: Aug 09 23:30 AEST
+----------------------------------------------------------
+1/1 Testing: UnitTests
+1/1 Test: UnitTests
+Command: "/home/christian/local/repos/Animated-3D-Fractals/build/unit_tests"
+Directory: /home/christian/local/repos/Animated-3D-Fractals/build
+"UnitTests" start time: Aug 09 23:30 AEST
+Output:
+----------------------------------------------------------
+[==========] Running 27 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 16 tests from InterpolateTest
+[ RUN      ] InterpolateTest.DotProduct
+[       OK ] InterpolateTest.DotProduct (0 ms)
+[ RUN      ] InterpolateTest.DotProductZeroVector
+[       OK ] InterpolateTest.DotProductZeroVector (0 ms)
+[ RUN      ] InterpolateTest.DotProductUnitVectors
+[       OK ] InterpolateTest.DotProductUnitVectors (0 ms)
+[ RUN      ] InterpolateTest.NormalizeUnitVector
+[       OK ] InterpolateTest.NormalizeUnitVector (0 ms)
+[ RUN      ] InterpolateTest.NormalizeVector
+[       OK ] InterpolateTest.NormalizeVector (0 ms)
+[ RUN      ] InterpolateTest.NormalizeZeroVector
+[       OK ] InterpolateTest.NormalizeZeroVector (0 ms)
+[ RUN      ] InterpolateTest.NormalizeVerySmallVector
+[       OK ] InterpolateTest.NormalizeVerySmallVector (0 ms)
+[ RUN      ] InterpolateTest.QuaternionNormalize
+[       OK ] InterpolateTest.QuaternionNormalize (0 ms)
+[ RUN      ] InterpolateTest.QuaternionNormalizeGeneral
+[       OK ] InterpolateTest.QuaternionNormalizeGeneral (0 ms)
+[ RUN      ] InterpolateTest.QuaternionInvert
+[       OK ] InterpolateTest.QuaternionInvert (0 ms)
+[ RUN      ] InterpolateTest.QuaternionInvertIdentity
+[       OK ] InterpolateTest.QuaternionInvertIdentity (0 ms)
+[ RUN      ] InterpolateTest.MatrixToQuaternionIdentity
+[       OK ] InterpolateTest.MatrixToQuaternionIdentity (0 ms)
+[ RUN      ] InterpolateTest.QuaternionToMatrixIdentity
+[       OK ] InterpolateTest.QuaternionToMatrixIdentity (0 ms)
+[ RUN      ] InterpolateTest.SlerpEndpoints
+[       OK ] InterpolateTest.SlerpEndpoints (0 ms)
+[ RUN      ] InterpolateTest.QuaternionMultiplication
+[       OK ] InterpolateTest.QuaternionMultiplication (0 ms)
+[ RUN      ] InterpolateTest.QuaternionMultiplicationWithIdentity
+[       OK ] InterpolateTest.QuaternionMultiplicationWithIdentity (0 ms)
+[----------] 16 tests from InterpolateTest (0 ms total)
+
+[----------] 11 tests from CameraTest
+[ RUN      ] CameraTest.DefaultConstructor
+[       OK ] CameraTest.DefaultConstructor (0 ms)
+[ RUN      ] CameraTest.KeyFrameFlag
+[       OK ] CameraTest.KeyFrameFlag (0 ms)
+[ RUN      ] CameraTest.MatrixAccessors
+[       OK ] CameraTest.MatrixAccessors (0 ms)
+[ RUN      ] CameraTest.MoveRelative
+[       OK ] CameraTest.MoveRelative (0 ms)
+[ RUN      ] CameraTest.MoveAbsolute
+[       OK ] CameraTest.MoveAbsolute (0 ms)
+[ RUN      ] CameraTest.MoveAbsoluteNormalized
+[       OK ] CameraTest.MoveAbsoluteNormalized (0 ms)
+[ RUN      ] CameraTest.DistanceTo
+[       OK ] CameraTest.DistanceTo (0 ms)
+[ RUN      ] CameraTest.DistanceToSame
+[       OK ] CameraTest.DistanceToSame (0 ms)
+[ RUN      ] CameraTest.RotateAroundAxis
+[       OK ] CameraTest.RotateAroundAxis (0 ms)
+[ RUN      ] CameraTest.RotateZeroDegrees
+[       OK ] CameraTest.RotateZeroDegrees (0 ms)
+[ RUN      ] CameraTest.Orthogonalize
+[       OK ] CameraTest.Orthogonalize (0 ms)
+[----------] 11 tests from CameraTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 27 tests from 2 test suites ran. (0 ms total)
+[  PASSED  ] 27 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UnitTests" end time: Aug 09 23:30 AEST
+"UnitTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Aug 09 23:30 AEST

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libfractal_core.a CMakeFiles/fractal_core.dir/source/camera.cpp.o CMakeFiles/fractal_core.dir/source/interpolate.cpp.o
+/usr/bin/ranlib libfractal_core.a

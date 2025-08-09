@@ -8,39 +8,39 @@ LDFLAGS=-lm -lGL -lX11 -lSDL2 -lSDL2main
 
 TW_OBJS=TwBar.o TwFonts.o LoadOGL.o TwMgr.o TwEventSDL.o TwPrecomp.o TwColors.o TwOpenGL.o TwEventSDL12.o TwEventSDL13.o LoadOGLCore.o TwOpenGLCore.o TwEventSDL20.o
 
-BX_OBJS=boxplorer2.o interpolate.o uniforms.o camera.o shader.o
+BX_OBJS=source/boxplorer2.o source/interpolate.o source/uniforms.o source/camera.o source/shader.o
 
 boxplorer2: $(BX_OBJS) $(TW_OBJS)
 	g++ $(BX_OBJS) $(TW_OBJS) -o boxplorer2 $(LDFLAGS)
 
-sdl2-test: sdl2-test.cc
-	g++ $(CFLAGS) sdl2-test.cc -o sdl2-test $(LDFLAGS)
+sdl2-test: source/sdl2-test.cpp
+	g++ $(CFLAGS) source/sdl2-test.cpp -o sdl2-test $(LDFLAGS)
 
-boxplorer2.o: boxplorer2.cc default_shaders.h shader_procs.h TGA.h \
-	camera.h interpolate.h uniforms.h Makefile.linux params.h \
+source/boxplorer2.o: source/boxplorer2.cpp include/default_shaders.h include/shader_procs.h include/TGA.h \
+	include/camera.h include/interpolate.h include/uniforms.h Makefile.linux include/params.h \
 	cfgs/menger.cfg.data/fragment.glsl
-	g++ -c $(CFLAGS) boxplorer2.cc
+	g++ -c $(CFLAGS) source/boxplorer2.cpp -o source/boxplorer2.o
 
-shadershrink: shadershrink.cc shadershrink.h Makefile.linux
-	g++ $(CFLAGS) shadershrink.cc -o shadershrink
+shadershrink: source/shadershrink.cpp include/shadershrink.h Makefile.linux
+	g++ $(CFLAGS) source/shadershrink.cpp -o shadershrink
 
-edit-cfg: edit-cfg.cc Makefile.linux
-	g++ $(CFLAGS) edit-cfg.cc -o edit-cfg
+edit-cfg: source/edit-cfg.cpp Makefile.linux
+	g++ $(CFLAGS) source/edit-cfg.cpp -o edit-cfg
 
-glsl: glsl.cc TGA.h glsl.h Makefile.linux cfgs/menger.cfg.data/fragment.glsl
-	g++ $(CFLAGS) glsl.cc -o glsl
+glsl: source/glsl.cpp include/TGA.h include/glsl.h Makefile.linux cfgs/menger.cfg.data/fragment.glsl
+	g++ $(CFLAGS) source/glsl.cpp -o glsl
 
-interpolate.o: interpolate.cc interpolate.h
-	g++ -c $(CFLAGS) interpolate.cc
+source/interpolate.o: source/interpolate.cpp include/interpolate.h
+	g++ -c $(CFLAGS) source/interpolate.cpp -o source/interpolate.o
 
-shader.o: shader.cc shader.h
-	g++ -c $(CFLAGS) shader.cc
+source/shader.o: source/shader.cpp include/shader.h
+	g++ -c $(CFLAGS) source/shader.cpp -o source/shader.o
 
-camera.o: camera.cc camera.h params.h
-	g++ -c $(CFLAGS) camera.cc
+source/camera.o: source/camera.cpp include/camera.h include/params.h
+	g++ -c $(CFLAGS) source/camera.cpp -o source/camera.o
 
-uniforms.o: uniforms.cc uniforms.h
-	g++ -c $(CFLAGS) uniforms.cc
+source/uniforms.o: source/uniforms.cpp include/uniforms.h
+	g++ -c $(CFLAGS) source/uniforms.cpp -o source/uniforms.o
 
 TwBar.o: AntTweakBar/src/TwBar.cpp
 	g++ -c $(CFLAGS) $<
