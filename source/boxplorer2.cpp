@@ -170,7 +170,7 @@ vec3 (*c)(vec3);
 // Compile the fragment shader right here.
 // This defines a bunch more 'globals' and functions.
 #define ST_NONE
-#include "cfgs/menger.cfg.data/fragment.glsl"
+#include "../cfgs/Spuds/fragment.glsl"
 #undef ST_NONE
 
 }  // namespace GLSL

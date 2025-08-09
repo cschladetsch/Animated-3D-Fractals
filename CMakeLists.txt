@@ -15,118 +15,99 @@ endif()
 add_compile_options(-Wall -Wextra -g)
 
 # Find required packages
-find_package(PkgConfig REQUIRED)
+find_package(OpenGL REQUIRED)
 
-# Find SDL2 (optional for unit tests)
-pkg_check_modules(SDL2 sdl2)
-if(SDL2_FOUND)
-    find_package(OpenGL REQUIRED)
-    set(BUILD_MAIN_APPS ON)
-    message(STATUS "SDL2 found - building main applications")
-else()
-    set(BUILD_MAIN_APPS OFF)
-    message(STATUS "SDL2 not found - building only unit tests")
-endif()
+# Add SDL2 from External directory
+set(SDL_SHARED OFF CACHE BOOL "Build shared libraries")
+set(SDL_STATIC ON CACHE BOOL "Build static libraries")
+set(SDL_TEST OFF CACHE BOOL "Build test programs")
+add_subdirectory(External/SDL2)
+
+# Set SDL2 variables
+set(SDL2_LIBRARIES SDL2-static SDL2main)
+set(SDL2_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/External/SDL2/include)
+set(BUILD_MAIN_APPS ON)
+message(STATUS "Using SDL2 from External/ directory")
 
 # Include directories
 include_directories(
     ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/AntTweakBar/include
+    ${CMAKE_SOURCE_DIR}/AntTweakBar/src
+    ${CMAKE_SOURCE_DIR}/GL
+    ${SDL2_INCLUDE_DIRS}
 )
 
-if(BUILD_MAIN_APPS)
-    include_directories(
-        ${CMAKE_SOURCE_DIR}/AntTweakBar/include
-        ${CMAKE_SOURCE_DIR}/AntTweakBar/src
-        ${CMAKE_SOURCE_DIR}/GL
-        ${SDL2_INCLUDE_DIRS}
-    )
-    
-    # Add preprocessor definitions
-    add_definitions(
-        -DTW_NO_LIB_PRAGMA
-        -DTW_STATIC
-        -D_UNIX
-        -DHAVE_OPENGL
-    )
-endif()
+# Add preprocessor definitions
+add_definitions(
+    -DTW_NO_LIB_PRAGMA
+    -DTW_STATIC
+    -D_UNIX
+    -DHAVE_OPENGL
+)
 
-# Core library source files (minimal for testing)
+# Core library source files
 set(CORE_SOURCES
     source/camera.cpp
     source/interpolate.cpp
+    source/shader.cpp
+    source/uniforms.cpp
 )
 
-# Create minimal core library for testing
+# AntTweakBar sources
+set(ANTTWEAKBAR_SOURCES
+    AntTweakBar/src/TwBar.cpp
+    AntTweakBar/src/TwFonts.cpp
+    AntTweakBar/src/LoadOGL.cpp
+    AntTweakBar/src/TwMgr.cpp
+    AntTweakBar/src/TwEventSDL.c
+    AntTweakBar/src/TwPrecomp.cpp
+    AntTweakBar/src/TwColors.cpp
+    AntTweakBar/src/TwOpenGL.cpp
+    AntTweakBar/src/TwEventSDL12.c
+    AntTweakBar/src/TwEventSDL13.c
+    AntTweakBar/src/LoadOGLCore.cpp
+    AntTweakBar/src/TwOpenGLCore.cpp
+    AntTweakBar/src/TwEventSDL20.c
+)
+
+# Create core library
 add_library(fractal_core STATIC
     ${CORE_SOURCES}
+    ${ANTTWEAKBAR_SOURCES}
 )
 
-if(BUILD_MAIN_APPS)
-    # Extended sources for main applications
-    set(EXTENDED_SOURCES
-        source/shader.cpp
-        source/uniforms.cpp
-        source/glsl.cpp
-    )
-    
-    # AntTweakBar sources
-    set(ANTTWEAKBAR_SOURCES
-        AntTweakBar/src/TwBar.cpp
-        AntTweakBar/src/TwFonts.cpp
-        AntTweakBar/src/LoadOGL.cpp
-        AntTweakBar/src/TwMgr.cpp
-        AntTweakBar/src/TwEventSDL.c
-        AntTweakBar/src/TwPrecomp.cpp
-        AntTweakBar/src/TwColors.cpp
-        AntTweakBar/src/TwOpenGL.cpp
-        AntTweakBar/src/TwEventSDL12.c
-        AntTweakBar/src/TwEventSDL13.c
-        AntTweakBar/src/LoadOGLCore.cpp
-        AntTweakBar/src/TwOpenGLCore.cpp
-        AntTweakBar/src/TwEventSDL20.c
-    )
-    
-    # Extended core library for main applications
-    add_library(fractal_core_extended STATIC
-        ${CORE_SOURCES}
-        ${EXTENDED_SOURCES}
-        ${ANTTWEAKBAR_SOURCES}
-    )
-    
-    target_link_libraries(fractal_core_extended 
-        ${OPENGL_LIBRARIES}
-        ${SDL2_LIBRARIES}
-        m
-        X11
-    )
-    
-    # Main executable
-    add_executable(boxplorer2
-        source/boxplorer2.cpp
-        source/tiler.cpp
-        source/oculus_sdk2.cpp
-        source/oculus_sdk4.cpp
-    )
-    
-    target_link_libraries(boxplorer2 
-        fractal_core_extended
-        ${OPENGL_LIBRARIES}
-        ${SDL2_LIBRARIES}
-        m
-        X11
-    )
-    
-    # Utility executables
-    add_executable(edit-cfg source/edit-cfg.cpp)
-    add_executable(shadershrink source/shadershrink.cpp)
-    add_executable(glsl source/glsl.cpp)
-    target_link_libraries(glsl fractal_core_extended)
-    
-    add_executable(sdl2-test source/sdl2-test.cpp)
-    target_link_libraries(sdl2-test 
-        ${SDL2_LIBRARIES}
-    )
-endif()
+target_link_libraries(fractal_core 
+    ${OPENGL_LIBRARIES}
+    ${SDL2_LIBRARIES}
+    m
+    X11
+)
+
+# Main executable
+add_executable(boxplorer2
+    source/boxplorer2.cpp
+    source/tiler.cpp
+    source/oculus_sdk2.cpp
+    source/oculus_sdk4.cpp
+)
+
+target_link_libraries(boxplorer2 
+    fractal_core
+    ${OPENGL_LIBRARIES}
+    ${SDL2_LIBRARIES}
+    m
+    X11
+)
+
+# Utility executables
+add_executable(edit-cfg source/edit-cfg.cpp)
+add_executable(shadershrink source/shadershrink.cpp)
+
+add_executable(sdl2-test source/sdl2-test.cpp)
+target_link_libraries(sdl2-test 
+    ${SDL2_LIBRARIES}
+)
 
 # Testing
 enable_testing()
