@@ -37,47 +37,24 @@ A powerful real-time 3D fractal rendering engine with interactive navigation, an
 
 ### Build Instructions
 
-#### Modern CMake Build (Recommended)
 ```bash
-# Clone the repository
+# Clone and initialize
 git clone <repository-url>
 cd Animated-3D-Fractals
-
-# Initialize submodules (SDL2 2.32.8 and Google Test)
 git submodule update --init --recursive
 
-# Create build directory and configure
+# Build with CMake
 mkdir build && cd build
 cmake ..
-
-# Build the project
 cmake --build .
 
-# Run unit tests to verify installation
-./unit_tests
-
-# Test SDL2 integration
-./sdl2-test
-```
-
-#### Legacy Makefile Build
-For legacy systems, simple makefiles are provided for Linux, Win32, and OSX.
-```bash
-# Copy appropriate makefile
-cp Makefile.linux Makefile  # or Makefile.osx, Makefile.win32
-
-# Build with make
-make
+# Verify installation
+./unit_tests && ./sdl2-test
 ```
 
 ### Running the Application
 ```bash
-# Basic usage - explore mandelbulb fractal interactively
 ./build/boxplorer2 cfgs/mandelbulb/default.cfg
-
-# Try different fractal types
-./build/boxplorer2 cfgs/menger.cfg.data/default.cfg
-./build/boxplorer2 cfgs/colonoscopy/default.cfg
 ```
 
 ## Project Structure
@@ -108,19 +85,11 @@ make
 
 ## Testing
 
-The project includes comprehensive unit tests using Google Test framework:
-- `test_interpolate.cpp`: Tests for mathematical interpolation functions (16 tests)
-- `test_camera.cpp`: Tests for camera and keyframe functionality (11 tests)
+27 unit tests validate core functionality including interpolation, camera movement, and matrix transformations:
 
 ```bash
-# Run all tests
 ./build/unit_tests
-
-# Or use CMake/CTest
-cd build && make test
 ```
-
-All 27 tests validate core functionality including quaternion operations, camera movement, interpolation, and matrix transformations.
 
 ## Interactive Controls
 
@@ -246,30 +215,29 @@ The `cfgs/` directory contains various fractal configurations:
 - Adjust resolution in config files for different quality/speed trade-offs
 - Modern GPUs with OpenGL 3.0+ provide best performance
 
-## Recent Fixes (2025-08-09)
+## Recent Improvements (2025-08-09)
 
-### GLSL Shader Compilation Fixed ✅
-- **Issue**: Duplicate variable declarations in `cfgs/mandelbulb/fragment.glsl` conflicted with `setup.inc`
-- **Fix**: Removed conflicting `varying vec3 eye, dir;` and `uniform float xres, yres, time, speed;` declarations
-- **Result**: All fractal shaders now compile successfully, enabling 3D graphics rendering
+### Depth-Based Coloring System ✅
+- **Feature**: RGB color gradient based on distance from fractal origin
+- **Colors**: Red (near), Green (middle), Blue (far) regions
+- **Behavior**: Colors remain consistent during navigation - each part of fractal has fixed color
+- **Precision**: High precision floating point shader support with `precision highp float;`
 
-### Mouse Sensitivity Improved ✅
-- **Issue**: High mouse sensitivity caused unstable navigation and window focus problems
-- **Fix**: Reduced `mouse_rot_speed` from 1.0 to 0.1 and `keyb_rot_speed` from 5 to 1
-- **Result**: Much smoother and more controllable fractal exploration
+### Optimized Resolution ✅
+- **Default**: 800x600 resolution for improved performance
+- **Configurable**: Resolution easily adjustable in config files
+- **Performance**: Better frame rates while maintaining visual quality
 
-### Performance Verified ✅
-- Application runs at 30+ FPS with real-time 3D fractal rendering
-- Distance estimator calculations working correctly
-- All shader uniforms properly linked and functional
+### Shader Compilation Fixed ✅
+- **GLSL**: Removed duplicate variable declarations preventing compilation
+- **Precision**: Added precision qualifiers for OpenGL ES compatibility
+- **Result**: All fractal shaders compile and render successfully
 
 ## Troubleshooting
 
-- Ensure graphics drivers support OpenGL 3.0+
-- For WSL2: Use X11 forwarding or run with `DISPLAY` variable set
-- If mouse controls are too sensitive, adjust `mouse_rot_speed` in config files
-- For stable viewing in WSL2/X11, use keyboard controls primarily
-- Use `./sdl2-test` to verify SDL2 integration is working
+- Ensure OpenGL 3.0+ graphics driver support
+- WSL2: Set `DISPLAY` variable for X11 forwarding
+- Adjust `mouse_rot_speed` in config files if controls are too sensitive
 
 ---
 
